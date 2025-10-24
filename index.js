@@ -16,7 +16,7 @@ const upload = multer({ dest: path.join(__dirname, 'uploads/') })
 app.post('/api/analyze-call', upload.single('audio'), analyzeRoute)
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')))
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'))
+  res.sendFile()
 })
 
 const PORT = process.env.PORT || 3000

@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "api/analyze-call.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/api/analyze-call", "dest": "/api/analyze-call.js" }
-  ]
-}

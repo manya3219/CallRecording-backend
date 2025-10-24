@@ -2,17 +2,16 @@ import express from 'express'
 import cors from 'cors'
 import multer from 'multer'
 import analyzeRoute from '../routes/analyzeCall.js'
-import path from 'path'
-import { fileURLToPath } from 'url'
 import { createServerlessExpress } from '@vercel/node'
-
-const __filename = fileURLToPath(import.meta.url)
-const _dirname = path.dirname(_filename)
+import path from 'path'
 
 const app = express()
 app.use(cors())
+app.use(express.json())
 
-const upload = multer({ dest: path.join(__dirname, '../uploads/') })
+
+const upload = multer({ dest: path.join('/tmp', 'uploads/') })
+
 
 app.post('/api/analyze-call', upload.single('audio'), analyzeRoute)
 

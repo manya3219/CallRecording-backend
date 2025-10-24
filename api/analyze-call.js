@@ -8,8 +8,10 @@ import path from 'path'
 const app = express()
 app.use(cors())
 app.use(express.json())
-
-
+app.get('/', (req, res) => {
+    res.send('Call Feedback Analyzer API is running')
+     console.log('Root endpoint was hit')
+})
 const upload = multer({ dest: path.join('/tmp', 'uploads/') })
 
 

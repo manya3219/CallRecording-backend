@@ -25,3 +25,9 @@ npm install
 Run the server using:
 
 npm start
+
+---
+
+## 🚀 Setup .env file
+OPENAI_API_KEY="your_api_key"
+PORT=3000
